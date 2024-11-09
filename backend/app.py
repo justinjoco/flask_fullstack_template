@@ -15,7 +15,7 @@ def create_app():
     app = Flask(__name__)
     CORS(app)
     app.config["SQLALCHEMY_DATABASE_URI"
-               ] = "postgresql://admin:password@db/shopping_store"
+               ] = "postgresql://admin:password@store_db/shopping_store"
     # initialize the app with the extension
     db.init_app(app)
     ## Initialize Config
