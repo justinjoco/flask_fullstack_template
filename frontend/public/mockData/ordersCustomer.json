@@ -1,0 +1,59 @@
+[
+  {
+    "date_created": "2024-06-11T18:16:02.754260+00:00",
+    "id": "dffb8f8b-ee97-4acb-9fca-a7f44d3cd68a",
+    "item_orders": [
+      {
+        "amount_bought": 1,
+        "date_created": "2024-06-11T18:16:02.754260+00:00",
+        "item": "Cards",
+        "total_price": "1.00"
+      },
+      {
+        "amount_bought": 1,
+        "date_created": "2024-06-11T18:16:02.754260+00:00",
+        "item": "Soap",
+        "total_price": "3.00"
+      }
+    ],
+    "order_price": "4.00"
+  },
+  {
+    "date_created": "2024-06-11T18:16:27.521448+00:00",
+    "id": "f04cea56-e187-4164-abb0-26669e1eb480",
+    "item_orders": [
+      {
+        "amount_bought": 1,
+        "date_created": "2024-06-11T18:16:27.521448+00:00",
+        "item": "Cards",
+        "total_price": "1.00"
+      },
+      {
+        "amount_bought": 1,
+        "date_created": "2024-06-11T18:16:27.521448+00:00",
+        "item": "Soap",
+        "total_price": "3.00"
+      }
+    ],
+    "order_price": "4.00"
+  },
+  {
+    "date_created": "2024-06-11T18:16:29.408498+00:00",
+    "id": "d3062332-d08e-4e58-bcb5-853b22ae808a",
+    "item_orders": [
+      {
+        "amount_bought": 1,
+        "date_created": "2024-06-11T18:16:29.408498+00:00",
+        "item": "Cards",
+        "total_price": "1.00"
+      },
+      {
+        "amount_bought": 1,
+        "date_created": "2024-06-11T18:16:29.408498+00:00",
+        "item": "Soap",
+        "total_price": "3.00"
+      }
+    ],
+    "order_price": "4.00"
+  }
+]

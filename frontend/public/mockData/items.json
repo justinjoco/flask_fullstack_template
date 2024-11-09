@@ -1,0 +1,26 @@
+[
+  {
+    "count": 5,
+    "id": "0f8e8f87-86b4-47ad-b240-2adb34c50380",
+    "name": "Cards",
+    "price": "1.00"
+  },
+  {
+    "count": 4,
+    "id": "5177c54a-9981-44bc-9c2a-1d3daf7310ed",
+    "name": "Soap",
+    "price": "3.00"
+  },
+  {
+    "count": 2,
+    "id": "a74ab2d4-d0d0-4705-854a-a4d6768d558f",
+    "name": "Broom",
+    "price": "2.50"
+  },
+  {
+    "count": 10,
+    "id": "3479cae8-1b73-4e57-9b80-3a62c467c381",
+    "name": "Tissues",
+    "price": "3.25"
+  }
+]

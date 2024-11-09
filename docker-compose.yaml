@@ -1,0 +1,29 @@
+name: shopping-store
+services:
+  frontend:
+    image: shopping-store/frontend
+    build: ./frontend
+    ports:
+      - 3000:80
+    depends_on:
+      - backend
+      - postgres
+  backend:
+    image: shopping-store/backend
+    container_name: backend
+    build: ./backend
+    ports:
+      - 5000:5000
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:16-alpine
+    container_name: db
+    ports:
+      - 5432:5432
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql 
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=admin
+      - POSTGRES_DB=shopping_store
