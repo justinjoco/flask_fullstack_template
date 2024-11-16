@@ -18,7 +18,7 @@ services:
       - postgres
   postgres:
     image: postgres:16-alpine
-    container_name: store_db
+    container_name: postgres_db
     ports:
       - 5432:5432
     volumes:
@@ -26,4 +26,4 @@ services:
     environment:
       - POSTGRES_PASSWORD=password
       - POSTGRES_USER=admin
-      - POSTGRES_DB=shopping_store
+      - POSTGRES_DB=url_db
