@@ -1,16 +1,15 @@
-name: shopping-store
+name: template-app
 services:
-  frontend:
-    image: shopping-store/frontend
-    build: ./frontend
-    ports:
-      - 3000:80
-    depends_on:
-      - backend
-      - postgres
+  #frontend:
+  #  image: template-app/frontend
+  #  build: ./frontend
+  #  ports:
+  #    - 3000:80
+  #  depends_on:
+  #    - backend
+  #    - postgres
   backend:
-    image: shopping-store/backend
-    container_name: backend
+    image: template-app/backend
     build: ./backend
     ports:
       - 5000:5000
@@ -25,4 +24,4 @@ services:
     environment:
       - POSTGRES_PASSWORD=password
       - POSTGRES_USER=admin
-      - POSTGRES_DB=url_db
+      - POSTGRES_DB=book_db

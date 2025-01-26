@@ -1,8 +1,5 @@
 # Shopping Store
-Fullstack project that implements a simple shop system
-
-## Retrospective
-https://justinjoco.github.io/shopping-store-details/
+Fullstack project template
 
 ## Stack
 - Frontend: React
