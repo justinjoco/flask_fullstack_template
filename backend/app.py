@@ -3,6 +3,7 @@
 from flask import Flask
 from waitress import serve
 from api.route.book_controller import book_api
+from api.route.health_check_controller import health_check_api
 from flask_cors import CORS
 
 from api.model.db import db
@@ -17,6 +18,7 @@ def create_app():
     # initialize the app with the extension
     db.init_app(app)
     ## Initialize Config
+    app.register_blueprint(health_check_api)
     app.register_blueprint(book_api)
 
     return app
