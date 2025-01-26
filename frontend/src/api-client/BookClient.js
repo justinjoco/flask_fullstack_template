@@ -7,7 +7,7 @@ export async function getBooks() {
   });
 
   const result = await response.json();
-  console.log(result);
+  console.log("Success:", result);
   return result;
 }
 
@@ -20,7 +20,7 @@ export async function getBookById(bookId) {
   });
 
   const result = await response.json();
-  console.log(result);
+  console.log("Success:", result);
   return result;
 }
 

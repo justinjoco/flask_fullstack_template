@@ -24,4 +24,4 @@ services:
     environment:
       - POSTGRES_PASSWORD=password
       - POSTGRES_USER=admin
-      - POSTGRES_DB=book_db
+      - POSTGRES_DB=app_db

@@ -6,7 +6,7 @@ import {
   deleteBook,
   addBook,
   getBookById,
-} from "../api-client/BookClientMock";
+} from "../api-client/BookClient";
 
 export default function Book() {
   const [booksDisplay, setBooksDisplay] = useState([]);
@@ -22,8 +22,6 @@ export default function Book() {
 
   const fetchBook = async (bookId) => {
     const book = await getBookById(bookId);
-    console.log("BOOK");
-    console.log(book);
     setBookDisplay(renderBookByIdDisplay(book));
   };
 
@@ -91,7 +89,7 @@ export default function Book() {
     e.preventDefault();
     const formData = new FormData(e.target),
       formDataObj = Object.fromEntries(formData.entries());
-    fetchBook(formDataObj.bookId);
+    fetchBook(formDataObj.id);
   };
 
   const handleCreateBookSubmit = (e) => {
