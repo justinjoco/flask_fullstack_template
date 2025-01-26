@@ -1,4 +1,4 @@
-# Shopping Store
+# Flask Fullstack project template
 Fullstack project template
 
 ## Stack
