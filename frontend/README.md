@@ -1,4 +1,4 @@
-# Shopping Store Frontend
+# Full Stack Frontend
 
 Ideas to implement
 - Customer tab has shopping cart

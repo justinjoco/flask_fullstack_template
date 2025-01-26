@@ -1,13 +1,13 @@
 name: template-app
 services:
-  #frontend:
-  #  image: template-app/frontend
-  #  build: ./frontend
-  #  ports:
-  #    - 3000:80
-  #  depends_on:
-  #    - backend
-  #    - postgres
+  frontend:
+    image: template-app/frontend
+    build: ./frontend
+    ports:
+      - 3000:80
+    depends_on:
+      - backend
+      - postgres
   backend:
     image: template-app/backend
     build: ./backend
