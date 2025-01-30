@@ -7,14 +7,20 @@ services:
       - 3000:80
     depends_on:
       - backend
-      - postgres
   backend:
     image: template-app/backend
     build: ./backend
     ports:
       - 5000:5000
     depends_on:
+      - cache
       - postgres
+  cache:
+    image: bitnami/redis:7.0
+    ports:
+      - 6379:6379
+    environment:
+      - REDIS_PASSWORD=mypassword
   postgres:
     image: postgres:16-alpine
     ports:

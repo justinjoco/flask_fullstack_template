@@ -8,6 +8,7 @@ from flask_cors import CORS
 
 from api.model.db import db
 from tracing.log import logger
+from api.seed.init_cache import init_cache
 
 
 def create_app():
@@ -27,4 +28,5 @@ def create_app():
 if __name__ == '__main__':
     logger.info("Starting server...")
     app = create_app()
+    init_cache()
     serve(app, host="0.0.0.0", port=5000)

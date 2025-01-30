@@ -19,11 +19,13 @@ def get_books():
     result = book_service.get_books()
     return BookResponse(many=True).dump(result), 200
 
+
 @book_api.get('/book/<book_id>')
 def get_book_by_id(book_id):
     logger.info(f"Get book with id={book_id}")
     result = book_service.get_book_by_id(book_id)
     return BookResponse().dump(result), 200
+
 
 @book_api.put('/book/<book_id>')
 def update_book_by_id(book_id):
@@ -32,9 +34,9 @@ def update_book_by_id(book_id):
     result = book_service.update_book_by_id(book_id, body)
     return BookResponse().dump(result), 200
 
+
 @book_api.delete('/book/<book_id>')
 def delete_book_by_id(book_id):
     logger.info(f"Deleting book by id={book_id}")
     book_service.delete_book_by_id(book_id)
     return "Book has been deleted", 204
-

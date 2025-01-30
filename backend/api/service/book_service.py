@@ -5,6 +5,7 @@ from api.model.db import db
 from sqlalchemy import insert, update, delete
 from uuid import uuid4
 
+
 class BookService:
     def get_books(self):
         logger.info("Retrieving items from DB")
@@ -17,11 +18,11 @@ class BookService:
     def update_book_by_id(self, book_id, book_update):
         logger.info(f"Updating book with id = {book_id}")
         Book.query.get_or_404(book_id)
-        update_stmt = update(Book).where(Book.id == book_id).values(**book_update)
+        update_stmt = update(Book).where(Book.id == book_id).values(
+            **book_update)
         db.session.execute(update_stmt)
         db.session.commit()
-        return {"id": book_id, **book_update}
-
+        return {"id": book_id, ** book_update}
 
     def delete_book_by_id(self, book_id):
         logger.info(f"Delete book where book id ={book_id}")
@@ -29,10 +30,9 @@ class BookService:
         db.session.execute(delete_stmt)
         db.session.commit()
 
-
     def insert_book(self, book):
         logger.info("Inserting new book into DB")
-        book_to_insert = {"id": str(uuid4()), **book}
+        book_to_insert = {"id": str(uuid4()), ** book}
         insert_stmt = insert(Book).values(book_to_insert)
         db.session.execute(insert_stmt)
         db.session.commit()
