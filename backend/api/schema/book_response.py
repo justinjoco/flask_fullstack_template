@@ -1,5 +1,5 @@
 from flask_marshmallow import Schema
-from marshmallow.fields import Str, Decimal, DateTime
+from marshmallow.fields import Str, Decimal
 
 
 class BookResponse(Schema):
@@ -14,4 +14,4 @@ class BookResponse(Schema):
     genre = Str()
     description = Str()
     rating = Decimal()
-    date_published = DateTime()
+    date_published = Str()

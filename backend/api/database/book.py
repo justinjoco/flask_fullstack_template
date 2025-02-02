@@ -1,4 +1,4 @@
-from api.repository.db import db
+from api.database.db import db
 from sqlalchemy.orm import Mapped, mapped_column
 from datetime import datetime
 from decimal import Decimal
@@ -18,11 +18,11 @@ class Book(db.Model):
 
     def to_dict(self):
         return {
-            "id": self.id,
+            "id": str(self.id),
             "title": self.title,
             "author": self.author,
             "genre": self.genre,
             "description": self.description,
-            "rating": self.rating,
-            "date_published": self.date_published   
+            "rating": float(self.rating),
+            "date_published": str(self.date_published)
         }

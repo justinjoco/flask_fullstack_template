@@ -5,11 +5,8 @@ from waitress import serve
 from api.route.book_controller import book_api
 from api.route.health_check_controller import health_check_api
 from flask_cors import CORS
-from api.repository.book import Book
-from typing import List
-from api.repository.db import db
-from api.repository.cache import cache
-
+from api.repository.book_repository import book_repository
+from api.database.db import db
 from tracing.log import logger
 
 
@@ -27,16 +24,9 @@ def create_app():
     return app
 
 
-def init_cache():
-    logger.info(f"Pinging redis cache: {cache.health_check()}")
-    books: List[Book] = Book.query.all()
-    books_as_maps = [book.to_dict() for book in books]
-    cache.save_all(books_as_maps)
-
-
 if __name__ == '__main__':
     logger.info("Starting server...")
     app = create_app()
     with app.app_context():
-        init_cache()
+        book_repository.init_cache()
     serve(app, host="0.0.0.0", port=5000)

@@ -5,11 +5,11 @@ from uuid import uuid4
 
 class BookService:
     def get_books(self):
-        logger.info("Retrieving items from DB")
+        logger.info("Retrieving items from repo")
         return book_repository.find_all()
 
     def get_book_by_id(self, book_id):
-        logger.info(f"Retrieving item with id {book_id} from DB")
+        logger.info(f"Retrieving item with id {book_id} from repo")
         return book_repository.find_by_id(book_id)
 
     def update_book_by_id(self, book_id, book_update):
@@ -21,7 +21,7 @@ class BookService:
         return book_repository.delete_by_id(book_id)
 
     def insert_book(self, book):
-        logger.info("Inserting new book into DB")
+        logger.info("Inserting new book into repo")
         book_to_insert = {"id": str(uuid4()), ** book}
         return book_repository.insert(book_to_insert)
 
