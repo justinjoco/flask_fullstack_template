@@ -1,5 +1,5 @@
 from redis import Redis
-
+from tracing.log import logger
 
 class Cache:
     def __init__(self, table_name: str):
@@ -21,6 +21,7 @@ class Cache:
         pass
 
     def save_all(self, objects):
+        logger.info(f"Objects: {objects}")
         pass
 
     def delete_by_id(self, id):

@@ -15,3 +15,14 @@ class Book(db.Model):
     description: Mapped[str] = mapped_column(nullable=True)
     rating: Mapped[Decimal] = mapped_column(nullable=True)
     date_published: Mapped[datetime] = mapped_column(nullable=False)
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "title": self.title,
+            "author": self.author,
+            "genre": self.genre,
+            "description": self.description,
+            "rating": self.rating,
+            "date_published": self.date_published   
+        }

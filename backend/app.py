@@ -6,7 +6,7 @@ from api.route.book_controller import book_api
 from api.route.health_check_controller import health_check_api
 from flask_cors import CORS
 from api.repository.book import Book
-
+from typing import List
 from api.repository.db import db
 from api.repository.cache import cache
 
@@ -29,9 +29,9 @@ def create_app():
 
 def init_cache():
     logger.info(f"Pinging redis cache: {cache.health_check()}")
-    books = Book.query.all()
-    logger.info(f"Books: {books}")
-    cache.save_all(books)
+    books: List[Book] = Book.query.all()
+    books_as_maps = [book.to_dict() for book in books]
+    cache.save_all(books_as_maps)
 
 
 if __name__ == '__main__':
