@@ -7,7 +7,7 @@ book_api = Blueprint('book_api', __name__)
 
 @book_api.post('/book')
 def insert_book():
-    logger.info(f"Inserting book")
+    logger.info("Inserting book")
     book = request.json
     result = book_service.insert_book(book)
     return BookResponse().dump(result), 201
@@ -15,7 +15,7 @@ def insert_book():
 
 @book_api.get('/books')
 def get_books():
-    logger.info(f"Getting all books")
+    logger.info("Getting all books")
     result = book_service.get_books()
     return BookResponse(many=True).dump(result), 200
 

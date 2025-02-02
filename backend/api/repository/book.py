@@ -1,4 +1,4 @@
-from api.model.db import db
+from api.repository.db import db
 from sqlalchemy.orm import Mapped, mapped_column
 from datetime import datetime
 from decimal import Decimal
