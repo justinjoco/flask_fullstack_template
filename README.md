@@ -7,3 +7,4 @@ Fullstack project template
 - Cache: Redis
 - DB: Postgres
 - Local development: Docker-compose
+- Docker image Linux distro: Alpine
