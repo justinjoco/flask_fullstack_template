@@ -127,9 +127,12 @@ export default function Book() {
   function renderBookByIdDisplay(book) {
     let tableBody = null;
     if (book != null) {
-      const readableDate = new Date(book.date_published).toLocaleDateString(
-        "en-US",
-      );
+      let readableDate = null
+      if (book.date_published){
+        readableDate = new Date(book.date_published).toLocaleDateString(
+          "en-US",
+        );
+      }
       tableBody = (
         <tbody>
           <tr>
