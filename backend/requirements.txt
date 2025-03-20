@@ -10,3 +10,5 @@ marshmallow-sqlalchemy==1.0.0
 Flask-Cors==4.0.1
 redis==5.2.1
 Flask-Migrate==4.1.0
+pytz==2025.1
+tzlocal==5.3.1

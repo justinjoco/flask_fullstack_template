@@ -1,15 +1,11 @@
-from redis import Redis
+from redis import Redis, from_url
 from tracing.log import logger
 from api.cache.cache import Cache
 from typing import List, Dict
-
+import os
 class BookCache(Cache):
-    def __init__(self):
-        self.redis = Redis(host="cache",
-                           port=6379,
-                           username="default",
-                           password="mypassword",
-                           db=0, decode_responses=True)
+    def __init__(self, url):
+        self.redis = from_url(f"{url}?decode_responses=True")
 
     def find_all(self):
         books = []
@@ -36,4 +32,4 @@ class BookCache(Cache):
     def health_check(self):
         return self.redis.ping()
 
-book_cache = BookCache()
+book_cache = BookCache(os.getenv("REDIS_URL"))

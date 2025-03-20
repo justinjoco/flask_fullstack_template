@@ -1,3 +1,5 @@
 .DS_Store
 .venv/
 .ruff_cache
+tmp.log
+__pycache__

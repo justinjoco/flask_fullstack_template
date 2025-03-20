@@ -11,5 +11,5 @@ apk --purge del .build-deps
 RUN export FLASK_APP=app.py
 
 EXPOSE 5000
-
+ENV FLASK_ENV=production
 CMD ["python", "-u", "app.py"]

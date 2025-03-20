@@ -14,7 +14,7 @@ class Book(db.Model):
     genre: Mapped[str] = mapped_column(nullable=False)
     description: Mapped[str] = mapped_column(nullable=True)
     rating: Mapped[Decimal] = mapped_column(nullable=True)
-    date_published: Mapped[datetime] = mapped_column(nullable=False)
+    date_published: Mapped[datetime] = mapped_column(nullable=True)
 
     def to_dict(self):
         return {
